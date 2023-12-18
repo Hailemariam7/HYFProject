@@ -1,1 +1,1 @@
-# Simple front end for an ecommerce website
+# Simple frontend for an ecommerce website
