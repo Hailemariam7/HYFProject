@@ -1,0 +1,478 @@
+/*
+Name: Hailemariam Tsigabu
+codepen link: https://codepen.io/hMariam/pen/KKJrLdN?editors=1100
+
+The website is a kind of an e-commerce site where sellers and buyers meet. 
+There are whole sellers who only sell in massive quantities to other merchants and shop owners.
+There are also sellers who are willing to sell to ordinary customers the small need they have.
+This obviously is the intention, but as of now all functionalities may not be available.
+The motivation behind this is simply because e-commerce is at its beginning stage in Ethiopia, where I am from. 
+The information is such as item price is not accurate.
+
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: monospace;
+	list-style: none;
+}
+
+body {
+	width: 100%;
+	padding: 0 20px;
+}
+
+.header {
+	display: grid;
+	grid-template-rows: 95vw, 95vw;
+	white-space: nowrap;
+	position: sticky;
+	top: 0;
+	background-color: #22438c;
+}
+
+.welcome {
+	display: flex;
+	justify-content: space-between;
+	flex: 1;
+	flex-wrap: nowrap;
+	background-color: hsl(220, 25%, 5%);
+	min-height: 50px;
+}
+
+#navMenu {
+	display: none;
+	background-color: rgb(8, 13, 18);
+	border-radius: 5px;
+	width: 320px;
+	position: fixed;
+	left: 10px;
+	top: 64px;
+	font-size: 1.5rem;
+	text-align: center;
+	padding: 4px;
+	z-index: 1;
+	color: rgb(210 210 210);
+	cursor: pointer;
+}
+
+#icon {
+	display: none;
+	position: sticky;
+	left: 5px;
+	top: 5px;
+	font-size: 3rem;
+	color: white;
+	cursor: pointer;
+}
+
+h1 {
+	font-size: 5rem;
+	color: rgb(210 210 210);
+	text-align: center;
+	margin: auto;
+	min-height: 64px;
+	flex-grow: 1;
+}
+
+.logIn-signUp {
+	display: grid;
+	grid-template-columns: auto auto;
+	min-width: 9rem;
+}
+
+.logIn {
+	flex: 1;
+	background: none;
+	color: #f5fefe;
+	border: none;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+#nav {
+	display: flex;
+	justify-content: space-evenly;
+	font-size: 1.5rem;
+	background-color: #1a2232;
+	padding: 10px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	color: rgb(223, 223, 223);
+	cursor: pointer;
+}
+
+.navItems:hover {
+	background-size: 100% 3px;
+	color: rgb(232 234 245);
+	scale: 1.05;
+	cursor: pointer;
+}
+
+
+a:active {
+	text-decoration: underline;
+	background-color: rgb(21, 177, 229);
+	color: white;
+	text-decoration: underline;
+}
+
+.itemsSearch {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex: 0 1 100%;
+	height: 50px;
+	font-size: 1.5rem;
+	background-color: rgb(10, 27, 46);
+	position: sticky;
+	top: 126px;
+	color: white;
+	text-align: center;
+}
+
+.itemsSearch button {
+	margin-top: 11px;
+	background-color: rgb(61, 135, 214);
+	width: 80px;
+	border: none;
+	border-radius: 5px;
+	height: 32px;
+	font-size: 1.4rem;
+	color: white;
+
+}
+
+.itemsSearch input {
+	width: calc(14*16px);
+	height: 32px;
+}
+
+.itemsRecommendations {
+	display: flex;
+	justify-content: space-evenly;
+	flex-grow: 1;
+	font-size: 1.5rem;
+}
+
+#trending:hover,
+#nearby:hover,
+#recommendation:hover {
+	cursor: pointer;
+	scale: 1.05;
+}
+
+#itemsList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	width: 96vw;
+	padding: 0 25px;
+	overflow: hidden;
+	background-color: rgb(228, 244, 247);
+	flex: 0 0 320px;
+}
+
+.movingImage {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 220px;
+	aspect-ratio: 1/1;
+	gap: 5px;
+	cursor: pointer;
+	padding: 2px;
+}
+
+#itemsList p {
+	font-size: 1.5rem;
+	padding: 2px;
+	margin-bottom: 5px;
+	height: 100px;
+	width: 100%;
+	color: rgb(2, 63, 50);
+	white-space: wrap;
+	background-color: white;
+
+}
+
+#itemsList img {
+	object-fit: cover;
+	width: 100%;
+	flex-grow: 0;
+	aspect-ratio: 1/1.5;
+	border-radius: 1rem;
+	padding: 5px;
+}
+
+footer {
+	height: 15vh;
+	background-color: rgb(8, 13, 18);
+	color: white;
+	width: 94vw;
+}
+
+.social-icons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin: 0 auto;
+	padding: 1% 10%;
+}
+
+.social-icons {
+	margin-left: 6%;
+}
+
+.social-icons {
+	font-size: 2rem;
+}
+
+.social-icons,
+.contact-us {
+	font-size: 1.5rem;
+}
+
+.social-media {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.5rem;
+	flex: 3;
+}
+
+.social-media article {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2px 0;
+	gap: 4px;
+}
+
+#logInPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 94vw;
+	height: 100vh;
+	background-color: hsl(187, 41%, 92%);
+}
+
+#logInForm {
+	display: grid;
+	grid-template-rows: 2 1fr;
+	gap: 5px;
+}
+
+#logInForm p {
+	color: rgb(7, 187, 247);
+	font-size: 2rem;
+	margin-left: 80px;
+}
+
+#logInForm input {
+	width: 320px;
+	height: 48px;
+	background-color: rgb(210, 226, 232);
+	padding: 4px;
+	border-radius: 5px;
+}
+
+#logInForm button {
+	width: 320px;
+	height: 48px;
+	text-align: center;
+	background-color: rgb(21, 177, 229);
+	padding: 4px;
+	border-radius: 5px;
+}
+
+#registrationPage {
+	width: 94vw;
+	height: 120vh;
+	font-size: 1.5rem;
+	background-color: hsl(184, 22%, 87%, 0.2);
+	text-align: center;
+	color: rgb(5, 57, 74);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div>input:nth-child(-n+4) {
+	display: block;
+	width: 320px;
+	height: 48px;
+	border-radius: 5px;
+}
+
+.registrationForm {
+	display: flex;
+	flex-direction: column;
+	border-radius: 15px;
+	font-size: 1.5rem;
+	gap: 5px;
+	text-align: center;
+}
+
+.registrationForm fieldset {
+	border: none;
+}
+
+
+.registrationForm button {
+	width: 220px;
+	height: 48px;
+	border-radius: 5px;
+}
+
+#scrollUpIcon {
+	display: none;
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	background-color: #e6e4f5;
+}
+
+
+/*  the width numbers used here may not compile with agreed device size groups because they are adjusted to fit this particular work. */
+@media only screen and (max-width: 968px) {
+
+	body {
+
+		width: 100%;
+
+	}
+
+	#nav {
+		display: none;
+	}
+
+	h1 {
+		font-size: 4rem;
+		white-space: nowrap;
+	}
+
+	.header {
+		z-index: 1;
+	}
+
+	#icon {
+		display: block;
+	}
+
+	.itemsSearch button {
+		width: 80px;
+		background-color: rgb(61, 135, 214);
+		border: none;
+		font-size: 1.4rem;
+		color: white;
+	}
+
+	.itemsSearch {
+		display: grid;
+		grid-template-rows: auto auto;
+		height: 100px;
+		font-size: 1rem;
+		background-color: linear-gradient(#e6e4f5, #98e5);
+		white-space: nowrap;
+		top: 65px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.itemsRecommendations {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.movingImage {
+		flex: 0 0 160px;
+	}
+
+	#itemsList img {
+		object-fit: cover;
+		width: 100%;
+		flex-grow: 0;
+		aspect-ratio: 1/1.5;
+		border-radius: 10px;
+		padding: 5px;
+	}
+}
+
+
+/*  for mobile devices whose width is 320px and above. it doesn't function normally for smaller than that */
+@media only screen and (max-width: 767px) {
+	body {
+		font-size: 1rem;
+		width: 100vw;
+		margin: 0;
+		padding: 0;
+	}
+
+	#nav {
+		display: none;
+	}
+
+	h1 {
+		font-size: 3rem;
+		white-space: nowrap;
+		flex: 0;
+	}
+
+	.logIn-signUp {
+		display: flex;
+		flex-direction: column;
+		min-width: 9rem;
+	}
+
+	.itemsSearch button {
+		width: 80px;
+		background-color: rgb(61, 135, 214);
+		border: none;
+		font-size: 1.4rem;
+		color: white;
+	}
+
+	.itemsSearch input {
+		max-width: 10em;
+		min-height: 1rem;
+	}
+
+	.itemsSearch {
+		padding: 0 20px;
+	}
+
+	.itemsRecommendations {
+		display: flex;
+		justify-content: space-between;
+		margin: auto;
+		width: 100%;
+		font-size: 1.2rem;
+		margin: auto;
+	}
+
+	#icon {
+		display: block;
+	}
+
+	#itemsList img {
+		object-fit: cover;
+		width: 10.6rem;
+		flex-grow: 0;
+		aspect-ratio: 1/1.5;
+		border-radius: 12px;
+		padding: 5px;
+	}
+
+	.social-icons {
+		font-size: 1rem;
+		flex: 1;
+	}
+}
