@@ -21,9 +21,7 @@ login.addEventListener("click", ()=> {
     document.getElementById("logInPage").scrollIntoView(); /* this will display login page */
 });
 const log_in = document.getElementById("log-in"); /* this will help to display home page after successful login*/
-log_in.addEventListener('click', function () {
-    document.getElementById("home").style.display = "flex";
-});
+log_in.addEventListener('click', displayHome);
 
 
 
@@ -35,9 +33,7 @@ signUp.addEventListener("click", () => {
     document.getElementById("registrationPage").scrollIntoView();
 });
 const sign_up = document.getElementById('sign-up');
-sign_up.addEventListener('click', function () {
-    document.getElementById('home').style.display = 'flex';
-});
+sign_up.addEventListener('click', displayHome);
 
 
 /* Scroll to top function */
@@ -125,6 +121,7 @@ function displayFruitAndVegetables() {
      document.querySelectorAll(".fruitsAndVegetables").forEach(a => {
          a.style.backgroundColor = "rgb(61, 135, 214)";
          a.style.padding = "0 15px";
+         document.querySelectorAll(".fruit-vegetable").forEach(a=>a.style.display = "initial");
     });
     document.querySelectorAll(".grain").forEach(a=>a.style.display = "none");
     document.querySelectorAll(".spice").forEach(a => a.style.display = "none");
@@ -142,6 +139,7 @@ function displayGrains() {
      document.querySelectorAll(".grains").forEach(a => {
          a.style.backgroundColor = "rgb(61, 135, 214)";
          a.style.padding = "0 15px";
+         document.querySelectorAll(".grain").forEach(a=>a.style.display = "initial");
     });
     document.querySelectorAll(".fruit-vegetable").forEach(a=>a.style.display = "none");
     document.querySelectorAll(".spice").forEach(a => a.style.display = "none");
@@ -159,6 +157,7 @@ function displaySpices() {
       document.querySelectorAll(".spices").forEach(a => {
           a.style.backgroundColor = "rgb(61, 135, 214)";
           a.style.padding = "0 15px";
+          document.querySelectorAll(".spices").forEach(a => a.style.backgroundColor = "initial");
     });
     document.querySelectorAll(".fruit-vegetable").forEach(a=>a.style.display = "none");
     document.querySelectorAll(".grain").forEach(a => a.style.display = "none");
@@ -176,6 +175,7 @@ function displayClothsAndShoes() {
     document.querySelectorAll(".clothesAndShoes").forEach(a => {
         a.style.backgroundColor = "rgb(61, 135, 214)";
         a.style.padding = "0 15px";
+        document.querySelectorAll(".clothesAndShoes").forEach(a => a.style.backgroundColor = "initial");
     });
     document.querySelectorAll(".fruit-vegetable").forEach(a=>a.style.display = "none");
     document.querySelectorAll(".grain").forEach(a => a.style.display = "none");
@@ -191,6 +191,7 @@ function displayClothsAndShoes() {
 
 
 trend.addEventListener('click', () => {
+    document.getElementById("trending").style.backgroundColor = "initial";
     document.querySelectorAll(".nearby").forEach(a => a.style.display = "none");
     document.querySelectorAll(".recommendation").forEach(a => a.style.display = "none");
     
@@ -210,6 +211,8 @@ trend.addEventListener('click', () => {
 
 
 near.addEventListener('click', () => {
+    
+    document.getElementById("nearby").style.backgroundColor = "initial";
     document.querySelectorAll(".trending").forEach(a => a.style.display = "none");
     document.querySelectorAll(".recommendation").forEach(a => a.style.display = "none");
 
@@ -229,6 +232,8 @@ near.addEventListener('click', () => {
 
 recommend.addEventListener('click', () => {
 
+    
+    document.getElementById("recommendation").style.backgroundColor = "initial";
     document.querySelectorAll(".trending").forEach(a => a.style.display = "none");
     document.querySelectorAll(".nearby").forEach(a => a.style.display = "none");
 
@@ -240,6 +245,7 @@ recommend.addEventListener('click', () => {
     document.querySelectorAll(".fruitsAndVegetables").forEach(a => a.style.backgroundColor = "initial");
     document.querySelectorAll(".grains").forEach(a => a.style.backgroundColor = "initial");
     document.querySelectorAll(".spices").forEach(a => a.style.backgroundColor = "initial");
+    document.querySelectorAll(".clothesAndShoes").forEach(a => a.style.backgroundColor = "initial");
     document.getElementById("trending").style.backgroundColor = "initial";
     document.getElementById("nearby").style.backgroundColor = "initial";
        
