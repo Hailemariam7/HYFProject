@@ -121,8 +121,9 @@ function displayFruitAndVegetables() {
      document.querySelectorAll(".fruitsAndVegetables").forEach(a => {
          a.style.backgroundColor = "rgb(61, 135, 214)";
          a.style.padding = "0 15px";
-         document.querySelectorAll(".fruit-vegetable").forEach(a=>a.style.display = "initial");
+         
     });
+    document.querySelectorAll(".fruit-vegetable").forEach(a=>a.style.display = "initial");
     document.querySelectorAll(".grain").forEach(a=>a.style.display = "none");
     document.querySelectorAll(".spice").forEach(a => a.style.display = "none");
     document.querySelectorAll(".clothes-shoes").forEach(a => a.style.display = "none");
@@ -139,8 +140,9 @@ function displayGrains() {
      document.querySelectorAll(".grains").forEach(a => {
          a.style.backgroundColor = "rgb(61, 135, 214)";
          a.style.padding = "0 15px";
-         document.querySelectorAll(".grain").forEach(a=>a.style.display = "initial");
+        
     });
+    document.querySelectorAll(".grain").forEach(a=>a.style.display = "initial");
     document.querySelectorAll(".fruit-vegetable").forEach(a=>a.style.display = "none");
     document.querySelectorAll(".spice").forEach(a => a.style.display = "none");
     document.querySelectorAll(".clothes-shoes").forEach(a => a.style.display = "none");
@@ -157,8 +159,9 @@ function displaySpices() {
       document.querySelectorAll(".spices").forEach(a => {
           a.style.backgroundColor = "rgb(61, 135, 214)";
           a.style.padding = "0 15px";
-          document.querySelectorAll(".spices").forEach(a => a.style.backgroundColor = "initial");
+         
     });
+    document.querySelectorAll(".spice").forEach(a => a.style.display = "initial");
     document.querySelectorAll(".fruit-vegetable").forEach(a=>a.style.display = "none");
     document.querySelectorAll(".grain").forEach(a => a.style.display = "none");
     document.querySelectorAll(".clothes-shoes").forEach(a=>a.style.display = "none");
@@ -175,8 +178,9 @@ function displayClothsAndShoes() {
     document.querySelectorAll(".clothesAndShoes").forEach(a => {
         a.style.backgroundColor = "rgb(61, 135, 214)";
         a.style.padding = "0 15px";
-        document.querySelectorAll(".clothesAndShoes").forEach(a => a.style.backgroundColor = "initial");
+       
     });
+    document.querySelectorAll(".clothes-shoes").forEach(a=>a.style.display = "initial");
     document.querySelectorAll(".fruit-vegetable").forEach(a=>a.style.display = "none");
     document.querySelectorAll(".grain").forEach(a => a.style.display = "none");
     document.querySelectorAll(".spice").forEach(a => a.style.display = "none");
@@ -191,10 +195,10 @@ function displayClothsAndShoes() {
 
 
 trend.addEventListener('click', () => {
-    document.getElementById("trending").style.backgroundColor = "initial";
-    document.querySelectorAll(".nearby").forEach(a => a.style.display = "none");
-    document.querySelectorAll(".recommendation").forEach(a => a.style.display = "none");
     
+    document.querySelectorAll(".trending").forEach(a=>a.style.display = "initial");
+    
+    document.querySelectorAll(".recommendation").forEach(a => a.style.display = "initial");
     trend.style.backgroundColor = "rgb(61, 135, 214)";
     trend.style.padding = "0 15px";
    
@@ -212,7 +216,7 @@ trend.addEventListener('click', () => {
 
 near.addEventListener('click', () => {
     
-    document.getElementById("nearby").style.backgroundColor = "initial";
+    document.querySelectorAll(".nearby").forEach(a => a.style.display = "initial");
     document.querySelectorAll(".trending").forEach(a => a.style.display = "none");
     document.querySelectorAll(".recommendation").forEach(a => a.style.display = "none");
 
@@ -233,7 +237,7 @@ near.addEventListener('click', () => {
 recommend.addEventListener('click', () => {
 
     
-    document.getElementById("recommendation").style.backgroundColor = "initial";
+    document.querySelectorAll(".recommendation").forEach(a => a.style.display = "none");
     document.querySelectorAll(".trending").forEach(a => a.style.display = "none");
     document.querySelectorAll(".nearby").forEach(a => a.style.display = "none");
 
